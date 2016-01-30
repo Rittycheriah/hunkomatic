@@ -18,7 +18,7 @@ $(document).ready(function() {
 		this.movies = [
 			{"Human Centipede": 1}, 
 			{"Saw": 2},
-			{"Night of the Livign Dead": 3},
+			{"Night of the Living Dead": 3},
 			{"Mission Impossible": 4}, 
 			{"Terminator": 5},
 			{"Avengers": 6},
@@ -75,6 +75,8 @@ $(document).ready(function() {
 		this.nextTurn = function(){
 			var currentQuestion = questions[randomizer(0, 2)];
 			console.log(currentQuestion);
+			debugger
 		};
 	}
+
 });
