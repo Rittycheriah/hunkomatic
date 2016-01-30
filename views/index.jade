@@ -1,4 +1,39 @@
 extends layout
 
 block content
-  h1 It's HunkyMcHunkster.
+  h1 It's Hunky McHunkster.
+  label 2 Players
+    input#players2(type="radio", name="PlayerCount", checked=true)
+  label 3 Players
+    input#players3(type="radio", name="PlayerCount")
+  label 4 Players
+    input#players4(type="radio", name="PlayerCount")
+  button.start-game Start your Game!
+
+  #turn-input
+    h1 Win the love!
+    label Food
+      input#food-type(type="radio", name="typeOfQ")
+    label Movies
+      input#movie-type(type="radio", name="typeOfQ")
+    label Interests
+      input#interest-type(type="radio", name="typeOfQ")
+
+    #player-1 Player 1
+      select
+        each val in answers
+      	  option val
+    #player-2 Player 2
+      select
+        each val in answers
+      	  option val
+    #player-3 Player 3
+      select
+        each val in answers
+      	  option val
+    #player-4 Player 4
+      select
+        each val in answers
+      	  option val
+
+    button.check-answers Give your response!
