@@ -14,48 +14,157 @@ $(document).ready(function() {
 		this.playerCount = playerCount;
 
 		this.movies = [
-			{"Human Centipede": 1}, 
-			{"Saw": 2},
-			{"Night of the Living Dead": 3},
-			{"Mission Impossible": 4}, 
-			{"Terminator": 5},
-			{"Avengers": 6},
-			{"The Jerk": 7},
-			{"Back to Future": 8},
-			{"Holy Grail": 9}, 
-			{"10 Things I Hate About You": 10},
-			{"Titantic": 11},
-			{"Pride and Prejudice": 12}
+			{
+				"answer": "Human Centipede",
+			 	"point": 1
+			}, 
+			{
+				"answer": "Saw",
+				"point": 2
+
+			},
+			{
+				"answer": "Night of the Living Dead",
+				"point": 3
+			},
+			{
+				"answer": "Mission Impossible",
+				 "point": 4
+			}, 
+			{
+				"answer": "Terminator",
+				"point": 5
+			},
+			{
+				"answer": "Avengers",
+				"point": 6
+			},
+			{
+				"answer": "The Jerk",
+				"point": 7
+			},
+			{
+				"answer": "Back to Future",
+				"point": 8
+			},
+			{
+				"answer": "Holy Grail",
+				"point": 9
+			}, 
+			{
+				"answer": "10 Things I Hate About You",
+				"point": 10
+				},
+			{
+				"answer": "Titantic",
+				"point": 11
+			},
+			{
+				"answer": "Pride and Prejudice",
+				"point": 12
+			}
 		];
 
 		this.hobbies = [
-			{"Cliff Diving": 1},
-			{"Base Jumping": 2},
-			{"Fire Juggling": 3},
-			{"Parkour": 4},
-			{"Scuba Diving": 5},
-			{"Rock Climbing": 6},
-			{"Martial Arts": 7},
-			{"Horse Riding": 8},
-			{"Biking": 9},
-			{"Ceramics": 10},
-			{"Reading": 11},
-			{"Walking on a Beach": 12}
+			{
+				"answer": "Cliff Diving",
+				"point":1
+			},
+			{
+				"answer": "Base Jumping",
+				"point": 2
+			},
+			{
+				"answer": "Fire Juggling",
+				"point": 3
+			},
+			{
+				"answer": "Parkour",
+				"point": 4
+			},
+			{
+				"answer": "Scuba Diving",
+				"point": 5
+			},
+			{
+				"answer": "Rock Climbing",
+				"point": 6
+			},
+			{
+				"answer": "Martial Arts",
+				"point": 7
+			},
+			{
+				"answer": "Horse Riding",
+				"point": 8
+			},
+			{
+				"answer": "Biking",
+				"point":9
+			},
+			{
+				"answer": "Ceramics",
+				"point": 10
+			},
+			{
+				"answer": "Reading",
+				"point": 11
+			},
+			{
+				"answer": "Walking on a Beach",
+				"point": 12
+			}
 		];
 
 		this.restaurants = [
-			{"Hot Dog Stand": 1},
-			{"Fast Food": 2},
-			{"Fried Chicken": 3},
-			{"Wok the Line": 4},
-			{"Cafe de Coffee": 5},
-			{"Chili's": 6},
-			{"Olive Garden": 7},
-			{"Sushi Train": 8},
-			{"Cheesecake Factory": 9},
-			{"Burger Ups": 10},
-			{"Flemmings": 11},
-			{"Le Fancy": 12}
+			{
+				"answer": "Hot Dog Stand",
+			 	"point": 1
+			},
+			{
+				"answer": "Fast Food",
+				"point": 2
+			},
+			{
+				"answer": "Fried Chicken",
+				"point": 3
+			},
+			{
+				"answer": "Wok the Line",
+				"point": 4
+			},
+			{
+				"answer": "Cafe de Coffee",
+				"point": 5
+			},
+			{
+				"answer": "Chili's",
+				"point": 6
+			},
+			{
+				"answer": "Olive Garden",
+				"point": 7
+			},
+			{
+				"answer": "Sushi Train",
+				"point": 8
+			},
+			{
+				"answer": "Cheesecake Factory",
+				"point": 9
+			},
+			{
+				"answer": "Burger Ups",
+				"point": 10
+			},
+			{
+				"answer": "Flemmings",
+				"point": 11
+			},
+			{
+				"answer": "Le Fancy",
+				"point": 12
+			}
 		];
 
 		this.questions = [
@@ -74,12 +183,38 @@ $(document).ready(function() {
 		];
 
 		this.nextTurn = function(){
-			this.currentQuestion = questions[randomizer(0, 2)];
+			this.currentQuestion = this.questions[randomizer(0, 2)];
+			this.showQuestion();
+			this.createPlayerForms();
 		};
+
+		this.showQuestion = function() {
+			$('.currentQuestion').text(this.currentQuestion.question);
+		};
+
+		this.createPlayerForms = function() {
+			var wrapper = $('<div/>');
+			for(var i = 0; i < playerCount; i++) {
+				var playerForm = $('<form/>');
+				this.currentQuestion.answers.forEach(function(answer) {
+					playerForm.append(
+						$('<label>').text(answer.answer)
+					);
+					playerForm.append(
+						$('<input/>').attr({
+							value: answer.point,
+							type: 'radio'
+						})
+					);					
+				});
+				wrapper.append(playerForm);
+			}
+			$('.playerForms').append(wrapper);
+ 		};
 
 		this.compareAnswers = function(playerAns){
 	  	var spaces = [];
-	  	var hunkAns = hunk.[currentQuestion.type];
+	  	var hunkAns = hunk[questionType.type];
 	  	for(var i = 0; i < playerCount; i++){
 	  		var diff = hunkAns - playerAns;
 	  		if (diff === 0){
@@ -94,9 +229,15 @@ $(document).ready(function() {
 	  };
 	};
 
+
 	var startGame = function(playerCount) {
 	 	var newHunk = new Hunk();
 		var newGame = new Game(playerCount, newHunk);
+
+		$('.next-turn').on('click', function() {
+			newGame.nextTurn();
+		});
 	};
 
+	startGame(4);
 });
