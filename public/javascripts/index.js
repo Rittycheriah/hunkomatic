@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var Hunk = function () {
 		this.movies = randomizer(12, 1);
-		this.food = randomizer(12, 1);
+		this.restaurants = randomizer(12, 1);
 		this.hobbies = randomizer(12,1 );
 	};
 
@@ -9,11 +9,9 @@ $(document).ready(function() {
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	};
 
-	var sm_hunk = new Hunk();
-
-	var Game = function(playerCount) {
+	var Game = function(playerCount, hunk) {
+		this.hunk = hunk;
 		this.playerCount = playerCount;
-		// this.turn = nextTurn; 
 
 		this.movies = [
 			{"Human Centipede": 1}, 
@@ -62,21 +60,43 @@ $(document).ready(function() {
 
 		this.questions = [
 			{"question": "Your First Date: Where would you take your date to eat?", 
-			 "answers": this.restaurants
+			 "answers": this.restaurants, 
+			 "type": "restaurants"
 			},
 			{"question": "Wanna hang out? What do you want to do?", 
-			 "answers": this.hobbies
+			 "answers": this.hobbies, 
+			 "type": "hobbies"
 			}, 
 			{"question": "Let's go to a movie. What do you want to see?", 
-			 "answers": this.movies
+			 "answers": this.movies,
+			 "type": "movies"
 		  }
 		];
 
 		this.nextTurn = function(){
-			var currentQuestion = questions[randomizer(0, 2)];
-			console.log(currentQuestion);
-			debugger
+			this.currentQuestion = questions[randomizer(0, 2)];
 		};
-	}
+
+		this.compareAnswers = function(playerAns){
+	  	var spaces = [];
+	  	var hunkAns = hunk.[currentQuestion.type];
+	  	for(var i = 0; i < playerCount; i++){
+	  		var diff = hunkAns - playerAns;
+	  		if (diff === 0){
+	  			spaces.push(5);
+	  		} else if (Math.abs(diff) === 2) {
+	  			spaces.push(2);
+	  		} else {
+	  			spaces.push(0);
+	  		}
+	  	}
+	  	return spaces;
+	  };
+	};
+
+	var startGame = function(playerCount) {
+	 	var newHunk = new Hunk();
+		var newGame = new Game(playerCount, newHunk);
+	};
 
 });
