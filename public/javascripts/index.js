@@ -470,7 +470,16 @@ $(document).ready(function() {
 			}
 			return spaces;
 		};
-	} //End of GAME
+	}; //End of GAME
+
+
+	$('.playerCount').on('click', function() {
+		debugger;
+		var totalPlayers = $('input[type=radio]:checked').attr('value');
+		console.log(totalPlayers);
+		$('.submit-answers').addClass('hidden');
+		startGame(totalPlayers);
+	});
 
 	var startGame = function(playerCount) {
 	 	var newHunk = new Hunk();
@@ -493,6 +502,4 @@ $(document).ready(function() {
 			});
 		});
 	};
-
-	startGame(4);
 });
