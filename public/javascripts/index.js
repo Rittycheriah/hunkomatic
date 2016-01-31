@@ -81,24 +81,24 @@ $(document).ready(function() {
           "point": 8,
           "comebacks": {
               "win": "8.21 gigwatts! Hahaha, let's go!",
-              "neutral": 'Sure, sounds fine.',
-              "fail": 'You are boring.''
+              "neutral": "Sure, sounds fine.",
+              "fail": "You are boring."
           }
       }, {
           "answer": "Holy Grail",
           "point": 9,
           "comebacks": {
-              "win": 'I've seen Holy Grail like, fifty times, its the best.',
-              "neutral": 'Sure, why not?',
-              "fail": "...Why, I don't understand what's so funny about it?"
+              "win": "I have seen Holy Grail like, fifty times, its the best.",
+              "neutral": "Sure, why not?",
+              "fail": "...Why,  whats so funny about it?"
           }
       }, {
           "answer": "10 Things I Hate About You",
           "point": 10,
           "comebacks": {
-              "win": 'What a great movie! Heath Ledger is awesome.',
-              "neutral": 'Yeah, alright.',
-              "fail": 'The fact that you want to see that movie is the eleventh thing I hate about you.'
+              "win": "What a great movie! Heath Ledger is awesome.",
+              "neutral": "Yeah, alright.",
+              "fail": "The fact that you want to see that movie is the eleventh thing I hate about you."
           }
       }, {
           "answer": "Titantic",
@@ -532,7 +532,7 @@ $(document).ready(function() {
                 "answers": this.iceCreamFlavors,
                 "type": "iceCreamFlavors"
             }];
-  
+
         this.nextTurn = function() {
             this.currentQuestion = this.questions[randomizer(this.questions.length-1, 0)];
             this.showQuestion();
