@@ -438,6 +438,7 @@ $(document).ready(function() {
 			var wrapper = $('<div/>');
 			for(var i = 0; i < playerCount; i++) {
 				var playerForm = $('<form/>');
+				playerForm.addClass('playerForm');
 				this.currentQuestion.answers.forEach(function(answer, index) {
 					playerForm.append(
 						$('<label>').text(answer.answer)
@@ -474,7 +475,6 @@ $(document).ready(function() {
 
 
 	$('.playerCount').on('click', function() {
-		debugger;
 		var totalPlayers = $('input[type=radio]:checked').attr('value');
 		console.log(totalPlayers);
 		$('.playerCount').addClass('hidden');
@@ -491,7 +491,7 @@ $(document).ready(function() {
 		});
 
 		$('.submit-answers').on('click', function() {
-			$('input[type=radio]:checked').each(function(index , playerAnswer) {
+			$('.playerForm input[type=radio]:checked').each(function(index , playerAnswer) {
 				var playerValue = playerAnswer.getAttribute('value');
 				var stepsToMove = newGame.compareAnswers(playerValue);
 				var response = $('<div>/').text('player ' + (index + 1).toString() + ' moves ' + stepsToMove + ' places');
