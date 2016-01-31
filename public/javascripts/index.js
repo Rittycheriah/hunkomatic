@@ -278,20 +278,116 @@ $(document).ready(function() {
 		];
 
 		this.gifts = [
-			{nothing: 1},
-			{chiapet: 2},
-			{poem: 3},
-			{money: 4},
-			{beer: 5},
-			{flowers: 6},
-			{houseplant: 7},
-			{puppy: 8},
-			{cupcakes: 9},
-			{Car: 10},
-			{promisering: 11},
-			{painting: 12},
-			{champagne: 13}
+			{
+				"answer": "Nothing",
+				"point": 1,
+				"comebacks": {
+					win: 'Oh, I am so glad. I did not get you anything either.',
+					neutral: 'Oh, so that is what we are doing. I just got you something small anyway.',
+					fail: 'But, I thought we were doing something special!'
+				}
+			},
+			{
+				"answer": "Chiapet",
+				"point": 2,
+				"comebacks": {
+					win: 'Ch-ch-ch-Chia! Awesome.',
+					neutral: 'Ah, a plant animal. It is ... unique.',
+					fail: 'Um.. thanks?'
+				}
+			},
+			{
+				"answer": "Poem",
+				"point": 3,
+				"comebacks": {
+					win: 'Wow. That is so romantic',
+					neutral: 'Ah, you wrote it yourself. I am touched you tried.',
+					fail: 'What do I do this?'
+				}
+			},
+			{
+				"answer": "Money",
+				"point": 4,
+				"comebacks": {
+					win: 'I love money!',
+					neutral: 'At least you gave me something.',
+					fail: 'You think I can be bought?'
+				}
+			},
+			{
+				"answer": "Beer",
+				"point": 5,
+				"comebacks": {
+					win: 'Great. This will be perfect with the chicken wings that I have in my fridge.',
+					neutral: 'I am not much of a drinker, but thanks.',
+					fail: 'You calling me an alcoholic!'
+				}
+			},
+			{
+				"answer": "Flowers",
+				"point": 6,
+				"comebacks": {
+					win: 'That is the sweetest gift anyone has ever given me.',
+					neutral: 'Oh, I think is considered a weed some countries.',
+					fail: 'You killed these flowers! But all plants are sacred!'
+				}
+			},
+			{
+				"answer": "Houseplant",
+				"point": 7,
+				"comebacks": {
+					win: 'That is the sweetest gift anyone has ever given me.',
+					neutral: 'Oh, I think is considered a weed some countries.',
+					fail: 'You killed these flowers! But all plants are sacred!'
+				}
+			},
+			{
+				"answer": "Puppy",
+				"point": 8,
+				"comebacks": {
+					win: 'Yay!',
+					neutral: 'Ok',
+					fail: 'Bluh'
+				}
+			},
+			{
+				"answer": "Cupcakes",
+				"point": 9,
+				"comebacks": {
+					win: 'Yay!',
+					neutral: 'Ok',
+					fail: 'Bluh'
+				}
+			},
+			{
+				"answer": "Painting",
+				"point": 10,
+				"comebacks": {
+					win: 'Yay!',
+					neutral: 'Ok',
+					fail: 'Bluh'
+				}
+			},
+			{
+				"answer": "Promise Ring",
+				"point": 11,
+				"comebacks": {
+					win: 'Yay!',
+					neutral: 'Ok',
+					fail: 'Bluh'
+				}
+			},
+			{
+				"answer": "Car",
+				"point": 12,
+				"comebacks": {
+					win: 'Yay!',
+					neutral: 'Ok',
+					fail: 'Bluh'
+				}
+			}
 		];
+
 
 		this.questions = [
 			{"question": "Your First Date: Where would you take your date to eat?", 
