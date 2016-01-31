@@ -17,7 +17,7 @@ $(document).ready(function() {
 			{
 				"answer": "Human Centipede",
 			 	"point": 1
-			}, 
+			},
 			{
 				"answer": "Saw",
 				"point": 2
@@ -29,7 +29,7 @@ $(document).ready(function() {
 			{
 				"answer": "Mission Impossible",
 				 "point": 4
-			}, 
+			},
 			{
 				"answer": "Terminator",
 				"point": 5
@@ -49,7 +49,7 @@ $(document).ready(function() {
 			{
 				"answer": "Holy Grail",
 				"point": 9
-			}, 
+			},
 			{
 				"answer": "10 Things I Hate About You",
 				"point": 10
@@ -390,15 +390,15 @@ $(document).ready(function() {
 
 
 		this.questions = [
-			{"question": "Your First Date: Where would you take your date to eat?", 
-			 "answers": this.restaurants, 
+			{"question": "Your First Date: Where would you take your date to eat?",
+			 "answers": this.restaurants,
 			 "type": "restaurants"
 			},
-			{"question": "Wanna hang out? What do you want to do?", 
-			 "answers": this.hobbies, 
+			{"question": "Wanna hang out? What do you want to do?",
+			 "answers": this.hobbies,
 			 "type": "hobbies"
-			}, 
-			{"question": "Let's go to a movie. What do you want to see?", 
+			},
+			{"question": "Let's go to a movie. What do you want to see?",
 			 "answers": this.movies,
 			 "type": "movies"
 		  },
@@ -444,32 +444,32 @@ $(document).ready(function() {
 						.append(
 							$('<input/>').attr({
 								value: answer.point,
-								name: 'question' + i,
+								name: 'player' + i,
 								type: 'radio'
 							})
 						)
-					);					
+					);
 				});
 				wrapper.append(playerForm);
 			}
 			$('.playerForms').append(wrapper);
+			$('.submit-answers').removeClass('hidden');
  		};
 
 		this.compareAnswers = function(playerAns){
-	  	var spaces = [];
-	  	var hunkAns = hunk[questionType.type];
-	  	for(var i = 0; i < playerCount; i++){
-	  		var diff = hunkAns - playerAns;
-	  		if (diff === 0){
-	  			spaces.push(5);
-	  		} else if (Math.abs(diff) === 2) {
-	  			spaces.push(2);
-	  		} else {
-	  			spaces.push(0);
-	  		}
-	  	}
-	  	return spaces;
-	  };
+			var hunkAns = hunk[this.currentQuestion.type];
+			for(var i = 0; i < playerCount; i++){
+				var diff = hunkAns - playerAns;
+				if (diff === 0){
+					return '5';
+				} else if (Math.abs(diff) === 2 || Math.abs(diff) === 1) {
+					return '2';
+				} else {
+					return '0';
+				}
+			}
+			return spaces;
+		};
 	} //End of GAME
 
 	var startGame = function(playerCount) {
@@ -477,7 +477,20 @@ $(document).ready(function() {
 		var newGame = new Game(playerCount, newHunk);
 
 		$('.next-turn').on('click', function() {
+			$('.player-responses').text('');
 			newGame.nextTurn();
+		});
+
+		$('.submit-answers').on('click', function() {
+			$('input[type=radio]:checked').each(function(index , playerAnswer) {
+				var playerValue = playerAnswer.getAttribute('value');
+				var stepsToMove = newGame.compareAnswers(playerValue);
+				var response = $('<div>/').text('player ' + (index + 1).toString() + ' moves ' + stepsToMove + ' places');
+				$('.player-responses').append(response);
+				$('.playerForms').text('');
+				$('.currentQuestion').text('');
+				$('.submit-answers').addClass('hidden');
+			});
 		});
 	};
 
