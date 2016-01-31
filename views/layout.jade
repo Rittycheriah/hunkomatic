@@ -10,6 +10,17 @@ html
       .col-md-4
       .col-md-4
         button.next-turn Next Turn
+        .playerCount
+            legend How Many Players?        
+              input(type='radio' value='1' name='totalPlayers' id='1')
+              label(for='1') 1
+              input(type='radio' value='2' name='totalPlayers' id='2')
+              label(for='2') 2
+              input(type='radio' value='3' name='totalPlayers' id='3')
+              label(for='3') 3
+              input(type='radio' value='4' name='totalPlayers' id='4')
+              label(for='4') 4
+            button.btn.btn-primary#submitPlayerCt Submit Player Count
         .currentQuestion
         .playerForms
         input(type="submit" value="submit answers" class="submit-answers hidden")
