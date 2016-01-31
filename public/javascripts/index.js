@@ -1,4 +1,8 @@
 $(document).ready(function() {
+		var music = new Audio("../audio/music.mp3");
+	  music.loop = true;
+	  music.play();
+
     var Hunk = function() {
         this.movies = randomizer(12, 1);
         this.restaurants = randomizer(12, 1);
