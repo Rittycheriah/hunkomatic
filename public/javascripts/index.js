@@ -367,6 +367,8 @@ $(document).ready(function() {
             var wrapper = $('<div/>');
             for (var i = 0; i < playerCount; i++) {
                 var playerForm = $('<form/>');
+                var playerLabel = $('<h4/>').text('Player ' + (i + 1));
+                playerForm.append(playerLabel);
                 playerForm.addClass('playerForm');
                 this.currentQuestion.answers.forEach(function(answer, index) {
                     playerForm.append(
@@ -416,6 +418,8 @@ $(document).ready(function() {
         console.log(newHunk);
 
         $('.next-turn').removeClass('hidden');
+        $('.next-turn').addClass('btn-success');
+        $('.next-turn').addClass('btn');        
 
         $('.next-turn').on('click', function() {
             $('.player-responses').text('');

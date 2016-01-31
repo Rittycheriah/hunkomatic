@@ -1,3 +1,43 @@
 .hidden {
     display: none;
 }
+
+h1 {
+	font-family: 'Great Vibes'!important;
+	text-align: center;
+	text-decoration: underline;
+	font-size: 200px !important;
+}
+
+#submitPlayerCt{
+	text-align: center;
+}
+
+span{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+img{
+	padding-bottom: 10px;
+}
+
+label{
+	margin-right: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+input {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.playerForm{
+	margin: 10;
+}
+
+h4 {
+	font-weight: bold;
+
+}

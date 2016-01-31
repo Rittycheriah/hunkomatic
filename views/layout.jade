@@ -3,9 +3,20 @@ html
   head
     title= "Hunkomatic"
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='bootstrap', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Great+Vibes')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
   body
     block content
+    .row 
+      .col-md-1
+      .col-md-10 
+        h1 Paramour
+      .col-md-1
+    .row
+      .col-md-1
+      .col-md-10
+        img.center-block.img-rounded(src='https://natashastander.files.wordpress.com/2014/11/chris_hemsworth___thor_6_by_thortheavengergod-d7eoika1.jpg')
+      .col-md-1
     .row
       .col-md-4
       .col-md-4
@@ -21,9 +32,10 @@ html
               input(type='radio' value='4' name='totalPlayers' id='4')
               label(for='4') 4
             button.btn.btn-primary#submitPlayerCt Submit Player Count
+              span.glyphicon.glyphicon-heart
         .currentQuestion
         .playerForms
-        input(type="submit" value="submit answers" class="submit-answers hidden")
+        input(type="submit" value="Submit Answers" class="submit-answers hidden btn btn-success")
         .player-responses
       .col-md-4
 
