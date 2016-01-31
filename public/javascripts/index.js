@@ -405,7 +405,7 @@ $(document).ready(function() {
     }; //End of GAME
 
 
-    $('.playerCount').on('click', function() {
+    $('.submitPlayerCt').on('click', function() {
         var totalPlayers = $('input[type=radio]:checked').attr('value');
         console.log(totalPlayers);
         $('.playerCount').addClass('hidden');
