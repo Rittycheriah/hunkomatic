@@ -354,7 +354,7 @@ $(document).ready(function() {
         }];
 
         this.nextTurn = function() {
-            this.currentQuestion = this.questions[randomizer(2, 0)];
+            this.currentQuestion = this.questions[randomizer(this.questions.length, 0)];
             this.showQuestion();
             this.createPlayerForms();
         };
