@@ -485,6 +485,8 @@ $(document).ready(function() {
 	 	var newHunk = new Hunk();
 		var newGame = new Game(playerCount, newHunk);
 
+		$('.next-turn').removeClass('hidden');
+
 		$('.next-turn').on('click', function() {
 			$('.player-responses').text('');
 			newGame.nextTurn();
