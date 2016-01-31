@@ -8,7 +8,7 @@ There are many rituals that we go through in our culture. Few are as complex as 
 
 ![Game Setup](http://globalgamejam.org/sites/default/files/styles/game_content__wide/public/games/screenshots/20160131_120337.jpg?itok=CeKQDQzA)
 
-#####Board Setup:
+#####Setup Pieces:
 ![Board Setup] (http://globalgamejam.org/sites/default/files/styles/game_content__wide/public/games/screenshots/20160131_134758.jpg?itok=Y3HxuAUp)
 
 
