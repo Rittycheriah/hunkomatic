@@ -1,14 +1,15 @@
+
 $(document).ready(function() {
-		var music = new Audio("../audio/music.mp3");
-	  music.loop = true;
-	  music.play();
+    var music = new Audio("../audio/music.mp3");
+    music.loop = true;
+    music.play();
 
     var Hunk = function() {
         this.movies = randomizer(12, 1);
         this.restaurants = randomizer(12, 1);
         this.hobbies = randomizer(12, 1);
-		this.iceCreamFlavors = randomizer(12, 1);
-		this.gifts = randomizer(12, 1);
+    this.iceCreamFlavors = randomizer(12, 1);
+    this.gifts = randomizer(12, 1);
     };
 
     var randomizer = function(max, min) {
@@ -25,7 +26,7 @@ $(document).ready(function() {
           "comebacks": {
               "win": "I can't believe we have the same taste in movies!",
              "neutral": "Um, sure? I've never heard of that one.",
-             "fail": "...what?!? You're a pyschopath!" 
+             "fail": "...what?!? You're a pyschopath!"
           }
       }, {
           "answer": "Saw",
@@ -73,7 +74,7 @@ $(document).ready(function() {
           "comebacks": {
               "win": 'Steve Martin is the best! What a wild and crazy guy!',
               "neutral": 'Yeah, sounds good.',
-              "fail": 'You're a racist!'
+              "fail": 'You are a racist!'
           }
       }, {
           "answer": "Back to Future",
@@ -81,7 +82,7 @@ $(document).ready(function() {
           "comebacks": {
               "win": "8.21 gigwatts! Hahaha, let's go!",
               "neutral": 'Sure, sounds fine.',
-              "fail": 'You're boring.''
+              "fail": 'You are boring.''
           }
       }, {
           "answer": "Holy Grail",
@@ -89,7 +90,7 @@ $(document).ready(function() {
           "comebacks": {
               "win": 'I've seen Holy Grail like, fifty times, its the best.',
               "neutral": 'Sure, why not?',
-              "fail": ""...Why, I don't understand what's so funny about it?"
+              "fail": "...Why, I don't understand what's so funny about it?"
           }
       }, {
           "answer": "10 Things I Hate About You",
@@ -130,7 +131,7 @@ $(document).ready(function() {
           "answer": "Base Jumping",
           "point": 2,
           "comebacks": {
-              "win": 'Woo hoo! Let's go!',
+              "win": "Woo hoo! Let's go!",
               "neutral": 'Sure, sounds good.',
               "fail": 'What!? Are you crazy?!'
           }
@@ -146,7 +147,7 @@ $(document).ready(function() {
           "answer": "Parkour",
           "point": 4,
           "comebacks": {
-              "win": 'Awesome! Let's go!',
+              "win": "Awesome! Let's go!",
               "neutral": 'Sure, sounds good.',
               "fail": "Isn't that just a fancy way to run away?"
           }
@@ -156,7 +157,7 @@ $(document).ready(function() {
           "comebacks": {
               "win": "It's much better, down where it's wetter!",
               "neutral": 'So did you like the The Life Aquatic?',
-              "fail": 'I'm afraid of water.'
+              "fail":"'I'm afraid of water."
           }
       }, {
           "answer": "Rock Climbing",
@@ -170,23 +171,23 @@ $(document).ready(function() {
           "answer": "Martial Arts",
           "point": 7,
           "comebacks": {
-              "win": 'Cool, I'm really big into the underground boxing scene around here.',
+              "win": "Cool, I'm really big into the underground boxing scene around here.",
               "neutral": 'Cool.',
-              "fail": 'I don't believe in violence.'
+              "fail": "I don't believe in violence."
           }
       }, {
           "answer": "Horse Riding",
           "point": 8,
           "comebacks": {
               "win": 'I have an amazing stallion. How about we go for a ride?',
-              "neutral": 'Sure, let's ride.',
-              "fail": 'I find horses very smelly.'
+              "neutral":"Sure, let's ride.",
+              "fail": "I find horses very smelly."
           }
       }, {
           "answer": "Biking",
           "point": 9,
           "comebacks": {
-              "win": 'Awesome! Let's go!',
+              "win": "Awesome! Let's go!",
               "neutral": 'Sure, sounds good.',
               "fail": "Isnt that just a fancy way to run away?"
           }
@@ -237,7 +238,7 @@ $(document).ready(function() {
           "comebacks": {
               "win": "Yum! I love chicken!",
               "neutral": 'Sure that sounds tasty!',
-              "fail": 'I'm allergic sucks!"
+              "fail": "I'm allergic sucks!"
           }
       }, {
           "answer": "Wok the Line",
@@ -260,56 +261,56 @@ $(document).ready(function() {
           "point": 6,
           "comebacks": {
               "win": "That place has great service!",
-              "neutral": 'Sure, we can sit at the bar.',
-              "fail": 'Yikes sucks!"
+              "neutral": "Sure, we can sit at the bar.",
+              "fail": "Yikes sucks!"
           }
       }, {
           "answer": "Olive Garden",
           "point": 7,
           "comebacks": {
               "win": "I go there every week, that place is the best.",
-              "neutral": 'Everyone likes pasta, I guess.',
-              "fail": 'I am!"
+              "neutral": "Everyone likes pasta, I guess.",
+              "fail": "I am!"
           }
       }, {
           "answer": "Sushi Train",
           "point": 8,
           "comebacks": {
-              "win": "Choo choo! Let's ride the sushi train.",
-              "neutral": 'Yum, fish could be good.',
-              "fail": 'Fish!"
+              "win": "Choo choo! Let us ride the sushi train.",
+              "neutral": "Yum, fish could be good.",
+              "fail": "Fish!"
           }
       }, {
           "answer": "Cheesecake Factory",
           "point": 9,
           "comebacks": {
               "win": "I love cheesecake!",
-              "neutral": 'Yeah, that could be good.',
-              "fail": "Haven't you sucks!"
+              "neutral": "Yeah, that could be good.",
+              "fail": "Yuck!"
           }
       }, {
           "answer": "Burger Ups",
           "point": 10,
           "comebacks": {
-              "win": "There's nothing like a good burger!",
-              "neutral": 'Sure. Sounds good.',
+              "win": "There is nothing like a good burger!",
+              "neutral": "Sure. Sounds good.",
               "fail": "I refuse to eat!"
           }
       }, {
           "answer": "Flemmings",
           "point": 11,
           "comebacks": {
-              "win": "That's sounds so romantic!",
-              "neutral": 'A little expensive, but okay.',
-              "fail": 'No. That sucks!"
+              "win": "That sounds so romantic!",
+              "neutral": "A little expensive, but okay.",
+              "fail": "No. That sucks!"
           }
       }, {
           "answer": "Le Fancy",
           "point": 12,
           "comebacks": {
-              "win": "That's sounds so romantic!",
-              "neutral": 'Sure, why not?',
-              "fail": 'I hate the French!"
+              "win": "That sounds so romantic!",
+              "neutral": "Sure, why not?",
+              "fail": "I hate the French!"
           }
       }];
             this.iceCreamFlavors = [{
@@ -317,8 +318,8 @@ $(document).ready(function() {
           "point": 1,
           "comebacks": {
               "win": "Wow how did you know! Vanilla is sooooooo tasty!",
-              "neutral": "Yeah vanilla thats ok",
-              "fail": "ohh i see! You think im boring! Screw you! (runs away crying)"
+              "neutral": "Yeah, vanilla thats ok",
+              "fail": "Ohh I see! You think im boring! Screw you! (runs away crying)"
           }
       }, {
           "answer": "chocolate",
@@ -503,242 +504,43 @@ $(document).ready(function() {
           "comebacks": {
               "win": "A Tesla! Oh you shouldn't have!!",
               "neutral": "A Lexus! That's pretty cool!",
-              "fail": "Bluh"
+              "fail": "Oh, a Yugo. Hmm..."
           }
       }];
-
-			this.questions = [{
-			    "question": "So I'm hungry? Where do you want to get some food",
-			    "answers": this.restaurants,
-			    "type": "restaurants"
-			},
+      this.questions = [{
+          "question": "So I'm hungry? Where do you want to get some food",
+          "answers": this.restaurants,
+          "type": "restaurants"
+      },
             {
-			    "question": "Wanna hang out? What do you want to do?",
-			    "answers": this.hobbies,
-			    "type": "hobbies"
-			},
+          "question": "Wanna hang out? What do you want to do?",
+          "answers": this.hobbies,
+          "type": "hobbies"
+      },
             {
-			    "question": "Let's go to a movie. What do you want to see?",
-			    "answers": this.movies,
-			    "type": "movies"
-			},
-			{
-			    "question": "Oh a gift? What is it?",
-			    "answers": this.gifts,
-				"type": "gifts"
-			},
+          "question": "Let's go to a movie. What do you want to see?",
+          "answers": this.movies,
+          "type": "movies"
+      },
+      {
+          "question": "Oh a gift? What is it?",
+          "answers": this.gifts,
+        "type": "gifts"
+      },
             {
                 "question": "mmmm icecream! What flavour will you have?",
                 "answers": this.iceCreamFlavors,
                 "type": "iceCreamFlavors"
             }];
-
-        this.iceCreamFlavors = [{
-            "answer": "vanilla",
-            "point": 1,
-            "comebacks": {
-                win: 'Wow how did you know! Vanilla is sooooooo tasty!',
-                neutral: 'Yeah vanilla thats ok',
-                fail: 'ohh i see! You think im boring! Screw you! (runs away crying)'
-            }
-        }, {
-            "answer": "chocolate",
-            "point": 2,
-            "comebacks": {
-                win: 'Wow how did you know! Vanilla is sooooooo tasty!',
-                neutral: 'Yeah vanilla thats ok',
-                fail: 'Chocolate. That is so generic.'
-            }
-        }, {
-            "answer": "strawberry",
-            "point": 3,
-            "comebacks": {
-                win: 'Strawberry is my favorite! How did you know!!!',
-                neutral: 'Yeah, strawberry is fine. Just fine, really.',
-                fail: 'Strawberry. I hate pink.'
-            }
-        }, {
-            "answer": "neopolitan",
-            "point": 4,
-            "comebacks": {
-                win: 'Yes! Finally someone who understands diversity.',
-                neutral: 'Yeah, I only like one of the flavors really, but it is okay.',
-                fail: 'This is so unamerican!'
-            }
-        }, {
-            "answer": "chocolateChip",
-            "point": 5,
-            "comebacks": {
-                win: 'Awesome. This is my favorite.',
-                neutral: 'Yeah, having chips in ice cream is not that weird I guess.',
-                fail: 'I do not even like chocolate chips in cookie form either.'
-            }
-        }, {
-            "answer": "Mint Chocolate Chip",
-            "point": 6,
-            "comebacks": {
-                win: 'Yes! Green ice cream is my jam.',
-                neutral: 'It is okay',
-                fail: 'Gross'
-            }
-        }, {
-            "answer": "Banana",
-            "point": 7,
-            "comebacks": {
-                win: 'This is my favorite fruit and in ice cream form!',
-                neutral: 'It is all right',
-                fail: 'I do not want my dessert and fruit mixed together!'
-            }
-        }, {
-            "answer": "coffee",
-            "point": 8,
-            "comebacks": {
-                win: 'I love coffee!',
-                neutral: 'It is ok.',
-                fail: 'You do not even know me!'
-            }
-        }, {
-            "answer": "Cookies and Cream",
-            "point": 9,
-            "comebacks": {
-                win: 'Wow! That is my favorite flavor!',
-                neutral: 'It is okay.',
-                fail: 'I am allergic to this!'
-            }
-        }, {
-            "answer": "Rocky Road",
-            "point": 10,
-            "comebacks": {
-                win: 'I love this flavor!',
-                neutral: 'It is okay.',
-                fail: 'Bad roads killed my father.'
-            }
-        }, {
-            "answer": "Cookiedough",
-            "point": 11,
-            "comebacks": {
-                win: 'How did you know that is my favorite flavor from childhood!',
-                neutral: 'It is okay. It is a texture thing.',
-                fail: 'Dough makes people sick.'
-            }
-        }, {
-            "answer": "Chocolate Hazelnut",
-            "point": 12,
-            "comebacks": {
-                win: 'This is the perfect flavor on EVERYTHING.',
-                neutral: 'It is not terrible.',
-                fail: 'Whoa, chocolate and nuts? I think we may moving a bit too fast...'
-            }
-        }];
-
-        this.gifts = [{
-            "answer": "Nothing",
-            "point": 1,
-            "comebacks": {
-                win: 'Oh, I am so glad. I did not get you anything either.',
-                neutral: 'Oh, so that is what we are doing. I just got you something small anyway.',
-                fail: 'But, I thought we were doing something special!'
-            }
-        }, {
-            "answer": "Chiapet",
-            "point": 2,
-            "comebacks": {
-                win: 'Ch-ch-ch-Chia! Awesome.',
-                neutral: 'Ah, a plant animal. It is ... unique.',
-                fail: 'Um.. thanks?'
-            }
-        }, {
-            "answer": "Poem",
-            "point": 3,
-            "comebacks": {
-                win: 'Wow. That is so romantic',
-                neutral: 'Ah, you wrote it yourself. I am touched you tried.',
-                fail: 'What do I do this?'
-            }
-        }, {
-            "answer": "Money",
-            "point": 4,
-            "comebacks": {
-                win: 'I love money!',
-                neutral: 'At least you gave me something.',
-                fail: 'You think I can be bought?'
-            }
-        }, {
-            "answer": "Beer",
-            "point": 5,
-            "comebacks": {
-                win: 'Great. This will be perfect with the chicken wings that I have in my fridge.',
-                neutral: 'I am not much of a drinker, but thanks.',
-                fail: 'You calling me an alcoholic!'
-            }
-        }, {
-            "answer": "Flowers",
-            "point": 6,
-            "comebacks": {
-                win: 'That is the sweetest gift anyone has ever given me.',
-                neutral: 'Oh, I think is considered a weed some countries.',
-                fail: 'You killed these flowers! But all plants are sacred!'
-            }
-        }, {
-            "answer": "Houseplant",
-            "point": 7,
-            "comebacks": {
-                win: 'That is the sweetest gift anyone has ever given me.',
-                neutral: 'Oh, I think is considered a weed some countries.',
-                fail: 'You killed these flowers! But all plants are sacred!'
-            }
-        }, {
-            "answer": "Puppy",
-            "point": 8,
-            "comebacks": {
-                win: 'Yay!',
-                neutral: 'Ok',
-                fail: 'Bluh'
-            }
-        }, {
-            "answer": "Cupcakes",
-            "point": 9,
-            "comebacks": {
-                win: 'Yay!',
-                neutral: 'Ok',
-                fail: 'Bluh'
-            }
-        }, {
-            "answer": "Painting",
-            "point": 10,
-            "comebacks": {
-                win: 'Yay!',
-                neutral: 'Ok',
-                fail: 'Bluh'
-            }
-        }, {
-            "answer": "Promise Ring",
-            "point": 11,
-            "comebacks": {
-                win: 'Yay!',
-                neutral: 'Ok',
-                fail: 'Bluh'
-            }
-        }, {
-            "answer": "Car",
-            "point": 12,
-            "comebacks": {
-                win: 'Yay!',
-                neutral: 'Ok',
-                fail: 'Bluh'
-            }
-        }];
-
+  
         this.nextTurn = function() {
             this.currentQuestion = this.questions[randomizer(this.questions.length-1, 0)];
             this.showQuestion();
             this.createPlayerForms();
         };
-
         this.showQuestion = function() {
             $('.currentQuestion').text(this.currentQuestion.question);
         };
-
         this.createPlayerForms = function() {
             var wrapper = $('<div/>');
             for (var i = 0; i < playerCount; i++) {
@@ -763,7 +565,6 @@ $(document).ready(function() {
             $('.playerForms').append(wrapper);
             $('.submit-answers').removeClass('hidden');
         };
-
         this.compareAnswers = function(playerAns) {
             var hunkAns = hunk[this.currentQuestion.type];
             for (var i = 0; i < playerCount; i++) {
@@ -778,52 +579,44 @@ $(document).ready(function() {
             }
             return spaces;
         };
-
-		this.outcomeFromSteps = function(steps) {
-		    if(steps === '5') {
-		        return 'win';
-		    } else if(steps == '2'){
-		        return 'neutral';
-		    }
-		    return 'fail';
-		};
-
-		this.getSpecificResponse = function(outcome, point) {
-			var answer = this.currentQuestion.answers.filter(function(answer){
-    			return answer.point === parseInt(point);
-			});
-		    return answer[0].comebacks[outcome];
-		};
+    this.outcomeFromSteps = function(steps) {
+        if(steps === '5') {
+            return 'win';
+        } else if(steps == '2'){
+            return 'neutral';
+        }
+        return 'fail';
+    };
+    this.getSpecificResponse = function(outcome, point) {
+      var answer = this.currentQuestion.answers.filter(function(answer){
+          return answer.point === parseInt(point);
+      });
+        return answer[0].comebacks[outcome];
+    };
     }; //End of GAME
-
-
     $('.submitPlayerCt').on('click', function() {
         var totalPlayers = $('input[type=radio]:checked').attr('value');
         console.log(totalPlayers);
         $('.playerCount').addClass('hidden');
         startGame(totalPlayers);
     });
-
     var startGame = function(playerCount) {
         var newHunk = new Hunk();
         var newGame = new Game(playerCount, newHunk);
         console.log(newHunk);
-
         $('.next-turn').removeClass('hidden');
         $('.next-turn').addClass('btn-success');
         $('.next-turn').addClass('btn');
-
         $('.next-turn').on('click', function() {
             $('.player-responses').text('');
             newGame.nextTurn();
         });
-
         $('.submit-answers').on('click', function() {
             $('.playerForm input[type=radio]:checked').each(function(index, playerAnswer) {
                 var playerValue = playerAnswer.getAttribute('value');
                 var stepsToMove = newGame.compareAnswers(playerValue);
-				var outcome = newGame.outcomeFromSteps(stepsToMove);
-				var playerResponse = newGame.getSpecificResponse(outcome, playerValue);
+        var outcome = newGame.outcomeFromSteps(stepsToMove);
+        var playerResponse = newGame.getSpecificResponse(outcome, playerValue);
                 var response = $('<div>/').text('player ' + (index + 1).toString() + ' moves ' + stepsToMove + ' places ' + '- The hunk\'s response: ' + playerResponse);
                 $('.player-responses').append(response);
                 $('.playerForms').text('');
