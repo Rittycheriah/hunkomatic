@@ -7,6 +7,8 @@ $(document).ready(function() {
         this.movies = randomizer(12, 1);
         this.restaurants = randomizer(12, 1);
         this.hobbies = randomizer(12, 1);
+		this.iceCreamFlavors = randomizer(12, 1);
+		this.gifts = randomizer(12, 1);
     };
 
     var randomizer = function(max, min) {
@@ -502,27 +504,32 @@ $(document).ready(function() {
 			        "fail": "Bluh"
 			    }
 			}];
+
 			this.questions = [{
-			    "question": "Your First Date: Where would you take your date to eat?",
+			    "question": "So I'm hungry? Where do you want to get some food",
 			    "answers": this.restaurants,
 			    "type": "restaurants"
-			}, {
+			},
+            {
 			    "question": "Wanna hang out? What do you want to do?",
 			    "answers": this.hobbies,
 			    "type": "hobbies"
-			}, {
+			},
+            {
 			    "question": "Let's go to a movie. What do you want to see?",
 			    "answers": this.movies,
 			    "type": "movies"
 			},
 			{
-			    "question": "I feel like icecrean. What flavor would you like?",
-			    "answers": this.iceCreamFlavors
+			    "question": "Oh a gift? What is it?",
+			    "answers": this.gifts,
+				"type": "gifts"
 			},
-			{
-			    "question": "Let's get crazy. Let's go away for the weekend. Where would you like to go?",
-			    "answers": this.getaways
-			}];
+            {
+                "question": "mmmm icecream! What flavour will you have?",
+                "answers": this.iceCreamFlavors,
+                "type": "iceCreamFlavors"
+            }];
 
         this.iceCreamFlavors = [{
             "answer": "vanilla",
@@ -720,38 +727,8 @@ $(document).ready(function() {
             }
         }];
 
-
-        this.questions = [{
-            "question": "Your First Date: Where would you take your date to eat?",
-            "answers": this.restaurants,
-            "type": "restaurants"
-        }, {
-            "question": "Wanna hang out? What do you want to do?",
-            "answers": this.hobbies,
-            "type": "hobbies"
-        }, {
-            "question": "Let's go to a movie. What do you want to see?",
-            "answers": this.movies,
-            "type": "movies"
-        }, {
-            "question": "Your First Date: Where would you take your date to eat?",
-            "answers": this.restaurants
-        }, {
-            "question": "Wanna hang out? What do you want to do?",
-            "answers": this.hobbies
-        }, {
-            "question": "Let's go to a movie. What do you want to see?",
-            "answers": this.movies
-        }, {
-            "question": "I feel like icecrean. What flavor would you like?",
-            "answers": this.iceCreamFlavors
-        }, {
-            "question": "Let's get crazy. Let's go away for the weekend. Where would you like to go?",
-            "answers": this.getaways
-        }];
-
         this.nextTurn = function() {
-            this.currentQuestion = this.questions[randomizer(this.questions.length, 0)];
+            this.currentQuestion = this.questions[randomizer(this.questions.length-1, 0)];
             this.showQuestion();
             this.createPlayerForms();
         };
@@ -816,7 +793,7 @@ $(document).ready(function() {
 
         $('.next-turn').removeClass('hidden');
         $('.next-turn').addClass('btn-success');
-        $('.next-turn').addClass('btn');        
+        $('.next-turn').addClass('btn');
 
         $('.next-turn').on('click', function() {
             $('.player-responses').text('');
