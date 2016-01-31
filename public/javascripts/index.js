@@ -167,6 +167,106 @@ $(document).ready(function() {
 			}
 		];
 
+		this.iceCreamFlavors = [
+			{
+				vanilla: {
+					points: 1,
+					comebacks: {
+						win: 'Wow how did you know! Vanilla is sooooooo tasty!',
+						neutral: 'Yeah vanilla thats ok',
+						fail: 'ohh i see! You think im boring! Screw you! (runs away crying)'
+					}
+				},
+			},
+			{
+				chocolate: {
+					points: 2,
+					comebacks: {
+						win: 'Wow how did you know! Vanilla is sooooooo tasty!',
+						neutral: 'Yeah vanilla thats ok',
+						fail: 'Chocolate. That is so generic.'
+					}
+				}
+			},
+			{
+				strawberry: {
+					points: 3,
+					comeback: {
+						win: 'Strawberry is my favorite! How did you know!!!',
+						neutral: 'Yeah, strawberry is fine. Just fine, really.',
+						fail: 'Strawberry. I hate pink.'
+						}
+				}
+			},
+			{neopolitan:
+				{
+				points: 4,
+				comeback: {
+					win: 'Yes! Finally someone who understands diversity.',
+					neutral: 'Yeah, I only like one of the flavors really, but it is okay.',
+					fail: 'This is so unamerican!'
+				}
+			}
+			},
+			{chocolateChip: {
+				points: 5,
+				comeback: {
+					win: 'Awesome. This is my favorite.',
+					neutral: 'Yeah, having chips in ice cream is not that weird I guess.',
+					fail: 'I do not even like chocolate chips in cookie form either.'
+				}
+			}
+			},
+			{mintChocolateChip: {
+				points: 6,
+				comeback: {
+					win: 'Yes! Green ice cream is my jam.',
+					neutral: 'It is okay.',
+					fail: 'Gross'
+				}
+			}
+			},
+			{banana: {
+				points: 7,
+				comeback: {
+					win: 'This is my favorite fruit and in ice cream form!',
+					neutral: 'It is all right',
+					fail: 'I do not want my dessert and fruit mixed together!'
+				}
+			}
+			},
+			{coffee: 
+				{
+					points: 8, 
+					comeback: {
+						win: 'I love cofee!',
+						neutral: 'It is ok.',
+						fail: 'You do not even know me!'
+					}
+				}
+			},
+			{cookiescream: 9},
+			{rockyroad: 10},
+			{cookiedough: 11},
+			{chocolatehazelnut: 12}
+		];
+
+		this.gifts = [
+			{nothing: 1},
+			{chiapet: 2},
+			{poem: 3},
+			{money: 4},
+			{beer: 5},
+			{flowers: 6},
+			{houseplant: 7},
+			{puppy: 8},
+			{cupcakes: 9},
+			{Car: 10},
+			{promisering: 11},
+			{painting: 12},
+			{champagne: 13}
+		];
+
 		this.questions = [
 			{"question": "Your First Date: Where would you take your date to eat?", 
 			 "answers": this.restaurants, 
@@ -179,7 +279,27 @@ $(document).ready(function() {
 			{"question": "Let's go to a movie. What do you want to see?", 
 			 "answers": this.movies,
 			 "type": "movies"
-		  }
+		  },
+			{
+				"question": "Your First Date: Where would you take your date to eat?",
+			 	"answers": this.restaurants
+			},
+			{
+				"question": "Wanna hang out? What do you want to do?",
+			 	"answers": this.hobbies
+			},
+			{
+				"question": "Let's go to a movie. What do you want to see?",
+			 	"answers": this.movies
+		 	},
+			{
+				"question": "I feel like icecrean. What flavor would you like?",
+				"answers": this.iceCreamFlavors
+			},
+			{
+				"question": "Let's get crazy. Let's go away for the weekend. Where would you like to go?",
+				"answers": this.getaways
+			}
 		];
 
 		this.nextTurn = function(){
@@ -227,8 +347,6 @@ $(document).ready(function() {
 	  	}
 	  	return spaces;
 	  };
-	};
-
 
 	var startGame = function(playerCount) {
 	 	var newHunk = new Hunk();
