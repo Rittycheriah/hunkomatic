@@ -12,28 +12,14 @@ block content
 
   #turn-input
     h1 Win the love!
-    label Food
+    label
       input#food-type(type="radio", name="typeOfQ")
+      'Food'
     label Movies
       input#movie-type(type="radio", name="typeOfQ")
     label Interests
       input#interest-type(type="radio", name="typeOfQ")
 
-    #player-1 Player 1
-      select
-        each val in answers
-      	  option val
-    #player-2 Player 2
-      select
-        each val in answers
-      	  option val
-    #player-3 Player 3
-      select
-        each val in answers
-      	  option val
-    #player-4 Player 4
-      select
-        each val in answers
-      	  option val
+
 
     button.check-answers Give your response!
