@@ -477,7 +477,7 @@ $(document).ready(function() {
 		debugger;
 		var totalPlayers = $('input[type=radio]:checked').attr('value');
 		console.log(totalPlayers);
-		$('.submit-answers').addClass('hidden');
+		$('.playerCount').addClass('hidden');
 		startGame(totalPlayers);
 	});
 
