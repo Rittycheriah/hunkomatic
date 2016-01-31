@@ -776,6 +776,22 @@ $(document).ready(function() {
             }
             return spaces;
         };
+
+		this.outcomeFromSteps = function(steps) {
+		    if(steps === '5') {
+		        return 'win';
+		    } else if(steps == '2'){
+		        return 'neutral';
+		    }
+		    return 'fail';
+		};
+
+		this.getSpecificResponse = function(outcome, point) {
+			var answer = this.currentQuestion.answers.filter(function(answer){
+    			return answer.point === parseInt(point);
+			});
+		    return answer[0].comebacks[outcome];
+		};
     }; //End of GAME
 
 
@@ -804,7 +820,9 @@ $(document).ready(function() {
             $('.playerForm input[type=radio]:checked').each(function(index, playerAnswer) {
                 var playerValue = playerAnswer.getAttribute('value');
                 var stepsToMove = newGame.compareAnswers(playerValue);
-                var response = $('<div>/').text('player ' + (index + 1).toString() + ' moves ' + stepsToMove + ' places');
+				var outcome = newGame.outcomeFromSteps(stepsToMove);
+				var playerResponse = newGame.getSpecificResponse(outcome, playerValue);
+                var response = $('<div>/').text('player ' + (index + 1).toString() + ' moves ' + stepsToMove + ' places ' + '- The hunk\'s response: ' + playerResponse);
                 $('.player-responses').append(response);
                 $('.playerForms').text('');
                 $('.currentQuestion').text('');
