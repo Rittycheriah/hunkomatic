@@ -21,7 +21,6 @@ $(document).ready(function() {
 			{
 				"answer": "Saw",
 				"point": 2
-
 			},
 			{
 				"answer": "Night of the Living Dead",
@@ -169,86 +168,113 @@ $(document).ready(function() {
 
 		this.iceCreamFlavors = [
 			{
-				vanilla: {
-					points: 1,
-					comebacks: {
-						win: 'Wow how did you know! Vanilla is sooooooo tasty!',
-						neutral: 'Yeah vanilla thats ok',
-						fail: 'ohh i see! You think im boring! Screw you! (runs away crying)'
-					}
-				},
-			},
-			{
-				chocolate: {
-					points: 2,
-					comebacks: {
-						win: 'Wow how did you know! Vanilla is sooooooo tasty!',
-						neutral: 'Yeah vanilla thats ok',
-						fail: 'Chocolate. That is so generic.'
-					}
+				"answer": "vanilla",
+				"point": 1,
+				"comebacks": {
+					win: 'Wow how did you know! Vanilla is sooooooo tasty!',
+					neutral: 'Yeah vanilla thats ok',
+					fail: 'ohh i see! You think im boring! Screw you! (runs away crying)'
 				}
 			},
 			{
-				strawberry: {
-					points: 3,
-					comeback: {
-						win: 'Strawberry is my favorite! How did you know!!!',
-						neutral: 'Yeah, strawberry is fine. Just fine, really.',
-						fail: 'Strawberry. I hate pink.'
-						}
+				"answer": "chocolate",
+				"point": 2,
+				"comebacks": {
+					win: 'Wow how did you know! Vanilla is sooooooo tasty!',
+					neutral: 'Yeah vanilla thats ok',
+					fail: 'Chocolate. That is so generic.'
 				}
 			},
-			{neopolitan:
-				{
-				points: 4,
-				comeback: {
+			{
+				"answer": "strawberry",
+				"point": 3,
+				"comebacks": {
+					win: 'Strawberry is my favorite! How did you know!!!',
+					neutral: 'Yeah, strawberry is fine. Just fine, really.',
+					fail: 'Strawberry. I hate pink.'
+				}
+			},
+			{
+				"answer": "neopolitan",
+				"point": 4,
+				"comebacks": {
 					win: 'Yes! Finally someone who understands diversity.',
 					neutral: 'Yeah, I only like one of the flavors really, but it is okay.',
 					fail: 'This is so unamerican!'
 				}
-			}
 			},
-			{chocolateChip: {
-				points: 5,
-				comeback: {
+			{
+				"answer": "chocolateChip",
+				"point": 5,
+				"comebacks": {
 					win: 'Awesome. This is my favorite.',
 					neutral: 'Yeah, having chips in ice cream is not that weird I guess.',
 					fail: 'I do not even like chocolate chips in cookie form either.'
 				}
-			}
 			},
-			{mintChocolateChip: {
-				points: 6,
-				comeback: {
+			{
+				"answer": "Mint Chocolate Chip",
+				"point": 6,
+				"comebacks": {
 					win: 'Yes! Green ice cream is my jam.',
-					neutral: 'It is okay.',
+					neutral: 'It is okay',
 					fail: 'Gross'
 				}
-			}
 			},
-			{banana: {
-				points: 7,
-				comeback: {
+			{
+				"answer": "Banana",
+				"point": 7,
+				"comebacks": {
 					win: 'This is my favorite fruit and in ice cream form!',
 					neutral: 'It is all right',
 					fail: 'I do not want my dessert and fruit mixed together!'
 				}
-			}
 			},
-			{coffee: 
-				{
-					points: 8, 
-					comeback: {
-						win: 'I love cofee!',
-						neutral: 'It is ok.',
-						fail: 'You do not even know me!'
-					}
+			{
+				"answer": "coffee",
+				"point": 8,
+				"comebacks": {
+					win: 'I love coffee!',
+					neutral: 'It is ok.',
+					fail: 'You do not even know me!'
 				}
 			},
-			{cookiescream: 9},
-			{rockyroad: 10},
-			{cookiedough: 11},
-			{chocolatehazelnut: 12}
+			{
+				"answer": "Cookies and Cream",
+				"point": 9,
+				"comebacks": {
+					win: 'Wow! That is my favorite flavor!',
+					neutral: 'It is okay.',
+					fail: 'I am allergic to this!'
+				}
+			},
+			{
+				"answer": "Rocky Road",
+				"point": 10,
+				"comebacks": {
+					win: 'I love this flavor!',
+					neutral: 'It is okay.',
+					fail: 'Bad roads killed my father.'
+				}
+			},
+			{
+				"answer": "Cookiedough",
+				"point": 11,
+				"comebacks": {
+					win: 'How did you know that is my favorite flavor from childhood!',
+					neutral: 'It is okay. It is a texture thing.',
+					fail: 'Dough makes people sick.'
+				}
+			},
+			{
+				"answer": "Chocolate Hazelnut",
+				"point": 12,
+				"comebacks": {
+					win: 'This is the perfect flavor on EVERYTHING.',
+					neutral: 'It is not terrible.',
+					fail: 'Whoa, chocolate and nuts? I think we may moving a bit too fast...'
+				}
+			}
 		];
 
 		this.gifts = [
@@ -316,15 +342,16 @@ $(document).ready(function() {
 			var wrapper = $('<div/>');
 			for(var i = 0; i < playerCount; i++) {
 				var playerForm = $('<form/>');
-				this.currentQuestion.answers.forEach(function(answer) {
+				this.currentQuestion.answers.forEach(function(answer, index) {
 					playerForm.append(
 						$('<label>').text(answer.answer)
-					);
-					playerForm.append(
-						$('<input/>').attr({
-							value: answer.point,
-							type: 'radio'
-						})
+						.append(
+							$('<input/>').attr({
+								value: answer.point,
+								name: 'question' + i,
+								type: 'radio'
+							})
+						)
 					);					
 				});
 				wrapper.append(playerForm);
@@ -347,6 +374,7 @@ $(document).ready(function() {
 	  	}
 	  	return spaces;
 	  };
+	} //End of GAME
 
 	var startGame = function(playerCount) {
 	 	var newHunk = new Hunk();
